@@ -1,0 +1,101 @@
+#VPC
+
+ logically isolated virtual network within a public cloud, providing a secure and controlled environment for hosting resources like virtual machines and applications. 
+
+- virtual private cloud
+- whole service running in vpc (not matter dafalut or custom)
+- defalut 5 vpc in one region (it can be adjusctable)
+
+two type of vpc when you create 
+-  vpc    --- only base you can create (all setting need to manual)
+- vpc and more  ---- u can choose this option always (automatic create all)
+------------------------------------------------------------------------------------------------
+# componets in vpc
+
+* Subnets:- 
+
+- group of ips (cidr block)
+- by default 16/28 cidr aws give.
+- max 65536 ip you can access (same as ports)
+-------------------------------------------------------------------------------
+
+* NACL:-
+- Network access contorl list (work as firewall)\
+- contorl subnet traffic 
+- addtional layer of security 
+- every vpc has dafault NACL allow all traffic
+------------------------------------------------------------------------------------
+
+*Internet Gateway:
+
+- enabled you to connect ec2 server using your local computer
+ - per vpc one internet gatway only
+
+--------------------------------------------------------------------------------------
+
+* route table:-
+
+- set of rules
+- detrmind where traffic is directed (route )
+- contorl the traffic flow betwenn subnet 
+--------------------------------------------------------------------
+
+* NAT gateway:
+
+- Nat gateway using purpose if u need to connect your private server to internet then use
+- its charagble for free tier also
+- without nat u cant access private server
+---------------------------------------------------------------------------						( subnet, internet gateway, route table, NACL, nat gatway )
+
+
+* Public and private vpc server
+
+
+- private server use for sensetive data 
+- you can`t access private server direct 
+- only ssh through access private server  
+
+step how to access private server in aws.
+
+1. create normal public ec2 
+2. u have private server u need to gen key pari (otherwise can`t access) (security purpose)
+3. local ec2 type all key pair and connect 
+its call best in host or jump server
+-------------------------------------------------------------------------------------------------------
+
+diff NACl and S.G.
+
+nacl - subnet level  security   \ S.G.  - server level (ec2) level security
+nacl - deny rule option here    \ no denly rule only allow rules here
+nacl - statless                 \ stateful 
+nacl - show rule no.            \ no rule  no here
+(no. is ranking wise
+if  1 is 1st prortiy 
+15 is last)
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+Vpc peering
+
+all resources share
+
+-pair means share 
+- accept reject optoion (same like fb request)
+- vpc peer multiple region possibaland same region also
+- but if a vpc connect b vpc right but c can`t connect only 1 as one
+
+
+		but 
+(mind it)
+
+you need connect all entire a b c d e f vpc then aws launch new service called transit gatway 
+you can connect multiople vpc at same time create a single point 
+and share all resoures single point called (Transit gateway) all vpc 
+
+
+
+
+
+
+

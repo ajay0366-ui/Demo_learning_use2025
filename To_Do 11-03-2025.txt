@@ -1,0 +1,71 @@
+Practicals
+
+
+IAM
+
+
+
+
+1) user
+2) group :- genric permission ( create whole users and give same permission )( not single single user give permission)
+3) role 
+
+
+1. create users
+2. create group and add users
+3. given policies or permission users and groups
+4. create own polices and assing
+5. create role and assing users
+6. MFA create and given user and own (root) account
+
+
+
+
+IMP
+
+* owner of all aws account (its very imp all access ) (if you have no knowledge or short  then u are delete then all Org. is 
+* IAM stands for identy and access management
+* its global service 
+* you can create,manage,give permission read write access allow, deny polices inside the IAM.
+* root means same a windows user admin
+
+
+
+* Polices
+
+1. custom policy : - you can create own aws policy (1. create visual 2. create json (write  with code))
+2. Direct or defalut policy :-  Already inside aws account
+
+* role 
+
+
+
+
+asking question in interview
+
+
+Q. If root user create one user then he give all access permission (IAm full Access) then user create user ?
+-> yes. Root--> create user(give permission full IAM Or Adminstration access (then depand on polices ) --->  user ---> user (have access)
+
+Q. Difference between root user and iam user :
+--> root user has more power (root user delete whole aws account) but iam user not delete 
+
+@. whicih is highest access polices :
+--> Full Administrion policy its one of highest police.
+
+
+
+mind it :
+
+json is key  value wite code (python dict data type) 
+ARN stands for Amazon Resource Name
+
+
+ 
+
+
+
+
+
+
+

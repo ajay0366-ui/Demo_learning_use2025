@@ -1,0 +1,96 @@
+# EBS
+
+practical:
+
+1) create ebs volume and attch ec2
+2) increase ebs volume (create 2-3 ebs andattach)
+3) attach and deatach ebs volume
+4) forcefully stop ec2 root volume
+5) craete snapshot ebs and attach other region and other az also
+6) create snapshot policy to regular data backup porcess ( why no data loss )
+-------------------------------------------------------------------------------------------------------
+
+EBS stand for elastic block storage 
+its a storage type
+its a compare other storage type its a expensive (using ssd) but giving best performance ssd (boost work)
+ebs also know as volume ..
+u can change volume size after create modify is possibal (10 gb then modify 50gb)
+
+*type of ebs volume
+SSD, HDD, magnetic disk.... 
+
+main type;
+
+1. genral purpose  gp2 and gp3 (SSD)
+2. provisioned iops io1, io2 (SSD)  ( using high task support only windows work)
+
+(save large amount data)
+(boot not support)
+3. throuput optimized hdd 
+4. cold hdd
+5. megnetic hdd
+
+----------------------------------------------------------------------------
+
+*how to create ebs storage 
+go ec2 storage find volume option and create
+
+(ebs volume lunch by default with when u create ec2 server automaticlly (8GB) at least need lunch instances(server).. 
+but, when u create sepreate then at least create 1 gb .)
+
+-u can attach multiple ebs volume with one ec2 (ex. 1 Root and other 3  ebs volume.. )
+- but your ebs volume in use already then u can`t attach same volume another server..(mind it)
+- one server (ec2) multiple ebs attach but need same Az (az -1b -- az-1b connect other not )
+- you forcefully stop ur root volume call deattch volume but its a risky  casue crash server..
+ 
+imp :-  you can connect ec2 and ebs same az ...
+
+
+IOPS : - input output operation is per second (speed 10mb per/s 50gb per/s) (ex. boost your gameing fps  then smooth run, task fast.)
+Root volume : - Main boot storage (os) when install ec2 automatically create 
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+#Snapshot
+
+- ebs volume backup 
+- save or copy your data
+
+*benifits
+1) backup purpose use
+2) dister recovry
+3) anytiem avibility
+4) some time migetate your data 
+
+*how to create snapshot
+
+u have ebs volume then click action button copy sanpshot then done.
+
+- ebs not direct connect one Az to other Az but snapshot is send (ex. Az 1a --- Az 1b   possibal )
+- snapshot (ebs voume ) transper one region to another region possibal (if u have done snapshot particular ebs volume )
+
+*lifecycle policy
+
+- Automatically backup your data (cron method (see format cron))
+- crearte 12345 snap then automaticlly off one by one and final 5 save main data ... 
+
+
+-----------------------------------------------------------------------------------
+Q. can i increse EBS storage size ?
+--> yes u can increase ebs storage.
+
+Q. can i decrease Ebs storage and why?
+--> no. bcuz  if aws give decrease size option then u will lost your files something data inside 
+	(i know im delete my file and backup but some cache, footprint is still avilable in volume)
+
+Q. if i delete ec2 server a Additional volume also delete?
+--> no. bcuz additonal volume purpose is save your data form any Dister and other server crash but root 
+	volume delete.
+
+Q. if lost my key and pair or suddenly crash my server how to get back my data?
+--> alreday create ebs volume deatach ec2 connect with other ec2 or creaer snapshot also save your data.
+
+Q. my data is very cruical can i backup my data everyday or regular bases?
+--> yes.  u need automatic data backup your ebs volume (lifecycle policy and set your data (hourly weekly montly and yeraly)
+

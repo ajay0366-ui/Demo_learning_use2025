@@ -1,0 +1,122 @@
+Ec2
+
+its one of core and major imp service in aws..
+ec2 stands for elastic compute.
+its a felxibal  scalibility serivce
+same as your computer but u can access through virtaul only 
+
+adv.
+auto on off (scalibility) 
+no maintaince 
+its full secure
+its a region specific service
+
+
+
+- some types ec2 instances
+
+1) On-Demand : - Normaal working (start and off) --- imp work use
+
+2) Reserverd : - get some discount but buy 1 - 6 or more month needed.  ------ company budget save 
+
+3) spot : -  sale offer and most discountable but its a time limited aws remind you before 3-5 minute close your server price is increase sale is over
+	     you have no any contorl -----  not imp work only time limeted work do it
+
+4) Deticated : - custom (ssd storage all ) depand your work 
+
+
+
+diff type of ec2 family :
+
+General purpose. Amazon EC2 general-purpose instances can handle a variety of workloads. ...
+Compute optimized. ...
+Graphics processing unit. ...
+Memory optimized. ...
+Storage optimized. ...
+Accelerating computing. ...
+HPC optimized. ...
+Micro.
+
+
+
+imp  ec2 also know as (instance, server, virtual machines, virtual computer also) 
+ 
+-----------------------------------------------------------------------------------------------------
+practical session
+
+1. create ec2 vitrual machine. and log in seesion over the browser
+2. create security group and assigne port no also
+3. create security group and access public and private (ssh) 
+4. SG assigne inbound rules  (ssh,tcp all,http ) and learn outbud rule 
+5. create key value pair 
+6. download private key (rsa key)... and login through ssh
+7. dowload git and login ssh ec2 machine (bcuz windows session is not good for direct access )
+-----------------------------------------------------------------------------------------------------------------------
+
+
+#Port
+
+port means the way of access computer 
+its a rule of protocol 
+around  65000 ports.
+order to access way of internet access 
+port means (Home  ---- your get ---- entery)
+
+ex. only access http then use 80 and use HTTPS then  443 use SSH 22
+
+--------------------------------------------------------------------------------------------------------------------
+
+# security group 
+
+virtual firewall for your EC2 instances to control incoming and outgoing traffic ..
+set of rules 
+inbound and outbound rules in SG
+0.0.0.0 means all traffic allow .. (public allow)
+security group is stateful. (track the state of a connection between a sender and receiver.)
+like a watchman (who enter your society ) allow or not ...
+
+--------------------------------------------------------------------------------------------------------------------------
+
+# Key Pair
+
+univiersal key and lock 
+why use security purose 
+key pair  work  (public ----aws   and private -- customer  ) 
+key pair is imp if u can access remote job or work 
+using with terminal git 
+always save you key in good location if delete or lost not recoverable and u can not access your server (its security prupose )
+key is not regenrate 
+you can not change your key also
+
+key pair its encrypted security end to end user  .
+RSA (its a algorthims  to encrypted save your key)
+ppt pormat use putty (but noit use noe days) only support linux and some os
+pem. use all os and most using format 
+ED version only use macos and linux (win not support)
+
+
+
+-------------------------------------------------------------------------------------------
+Imp ask Questions
+
+1. if server(EC2) is in stop will you still charge?
+--> Not chargble.. (if you can connect with storage then indirectly charge)
+
+2. My server is in a running state but i am unable to access give me a resson why? time out my server also ?
+--> pls check your security group and give persmission to or allow port access (depand service ) 
+    firewall means security gruop problem .. not give prot right
+
+3. how can access remotely ec2 server?
+--> create key and pair then go ssh login option and follow step 
+   once follow step then pase of laocte your key pair (key RSA) then log in without key can`t login.
+
+4. If lost my key can i access my server or can i regenrate my key ?
+--> No you can not access your server or not regenrate your key.
+
+	
+
+
+ 
+
+
+

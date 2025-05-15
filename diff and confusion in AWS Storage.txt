@@ -1,0 +1,41 @@
+# ebs (Volume)
+- when u start 1st time ec2 automaticlly assigin root volume 8gb is ebs ...(ec2 use means ebs use mind it)
+- high performance but all storage kind its a expensive
+- you can use backup purpose but u have other option snapshot (volume snap then ok low expensive)
+- you can add external ssd like more capacity use (like sdd )
+- but ebs use in only 1 az to 1 az not use other az and copy regiona also not support 
+- yes u can use  one ec2 multiple ebs but but same time one ebs not use other ec2 (feedbak) if running but one time deattch then u can attach another ec2 (mind it)
+- ebs disk size is increase but not decrease ( feedback) 
+- high taks using only faster speed than faster charge (mind it)
+
+--------------------------------------------------------------------------------------------------------------
+
+#snapshot:
+
+- snapshot using backup prpose.
+- its a snapshot means ebs voulume backup that`s it
+- why use i have alredy ebs bcuz snapshot is share 1 az to 2 az and its share also 1 region to another region (ebs cant share mind it )(ebs use only ec2 inside)
+- u can create regular backup and save your data through lifcycle policy 
+- main benfits : - automatic backup - dister recovery - data migeration  - share one az and another region
+--------------------------------------------------------------------------------------------------------------------------------------
+
+# AMI
+
+- AMI is amazon machin image 
+- ts a not storage (its a custom os)
+- pre install package to save your time 
+- its call Golden AMI  
+- three typ ami (aws manage, private(own creat), community(nord, redhat)
+----------------------------------------------------------------------------------------------------------------------------
+
+# EFS
+
+- Efs is elastic file system 
+- its not supoort Windows verion 
+- you can increase and decrease size (but ebs not decrease )
+- connect to 1 efs 1000 of ec2 at a time ( but ebs not connect same time both  ec2)
+- it means multiple server use at same time 
+- its compare with ebs its cheap pay as you go  (1 gb use pay 1gb)
+- muli az and multi regional support.. (need replacte)
+- have 3 options save data but automaticlly (by default standard  t hen infrequant access then later arcive mode 1-2 year not access)
+- 
